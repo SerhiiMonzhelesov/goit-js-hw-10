@@ -1,4 +1,4 @@
-import { fetchBreeds } from "./js/cat-api";
+import { fetchBreeds } from "./cat-api";
 
 const elements = {
     selectBreeds: document.querySelector('.breed-select'),
