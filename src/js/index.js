@@ -21,7 +21,6 @@ fetchBreeds()
             select: '.breed-select'
         });
         elements.selectBreeds.hidden = false;
-        elements.backdrop.classList.toggle('is-hidden')
     })
     .catch(error => {
         elements.errorMessage.hidden = false;
@@ -29,9 +28,9 @@ fetchBreeds()
             'ERROR LOADING',
             'TRY RELOADING THE PAGE',
             'OK',
-        );
-        elements.backdrop.classList.toggle('is-hidden');
-    });
+        ); 
+    })
+    .finally(() => elements.backdrop.classList.toggle('is-hidden'));
 
 function createMarkupBreeds(arr) {
     return arr.map(({ id, name }) => {
